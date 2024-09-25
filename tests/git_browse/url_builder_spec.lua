@@ -18,6 +18,13 @@ describe("URL builder", function()
 
     it("generates a URL from SSH remote and current branch", function()
       assert.are.same(
+        "https://github.com/Morozzzko-with-suffix/git-browse-nvim/tree/main",
+        module.build_url("git@github.com:Morozzzko-with-suffix/git-browse-nvim.git", "main", nil, "browse")
+      )
+    end)
+
+    it("generates a URL from SSH remote and current branch", function()
+      assert.are.same(
         "https://github.com/Morozzzko/git-browse-nvim/tree/main",
         module.build_url("https://github.com/Morozzzko/git-browse-nvim.git", "main", nil, "browse")
       )

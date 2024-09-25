@@ -31,7 +31,7 @@ M.build_gitlab_url = function(domain, repo, branch_name, path, url_type)
 end
 
 M.build_url = function(remote, current_branch_name, path_in_repo, url_type)
-  local _, _, domain, repo = string.find(remote, "[htps:/@]+(.*)[/:](%a+/.+)%p.*")
+  local _, _, domain, repo = string.find(remote, "[htps:/@]+(.*)[/:]([%a-]+/.+)%p.*")
 
   if domain and repo then
     if string.find(domain, "github.com") then
