@@ -22,7 +22,7 @@ M.browse = function(git_branch_command, git_remote_get_url_command, git_repo_roo
   local current_location = location_from_current_buffer(git_repo_root_command)
   local url = url_builder.build_url(remote, branch_name_to_open, current_location, "browse")
   return {
-    cmd = "open",
+    cmd = "xdg-open",
     url = url,
   }
 end
@@ -35,7 +35,7 @@ M.browse_line = function(git_branch_command, git_remote_get_url_command, git_rep
   local current_line = vim.api.nvim_win_get_cursor(0)[1]
   local url = url_builder.build_url(remote, branch_name_to_open, current_location .. "#L" .. current_line, "browse")
   return {
-    cmd = "open",
+    cmd = "xdg-open",
     url = url,
   }
 end
@@ -54,7 +54,7 @@ M.browse_selected = function(git_branch_command, git_remote_get_url_command, git
     "browse"
   )
   return {
-    cmd = "open",
+    cmd = "xdg-open",
     url = url,
   }
 end
@@ -66,7 +66,7 @@ M.blame = function(git_branch_command, git_remote_get_url_command, git_repo_root
   local current_location = location_from_current_buffer(git_repo_root_command)
   local url = url_builder.build_url(remote, branch_name_to_open, current_location, "blame")
   return {
-    cmd = "open",
+    cmd = "xdg-open",
     url = url,
   }
 end
@@ -79,7 +79,7 @@ M.blame_line = function(git_branch_command, git_remote_get_url_command, git_repo
   local current_line = vim.api.nvim_win_get_cursor(0)[1]
   local url = url_builder.build_url(remote, branch_name_to_open, current_location .. "#L" .. current_line, "blame")
   return {
-    cmd = "open",
+    cmd = "xdg-open",
     url = url,
   }
 end
@@ -98,7 +98,7 @@ M.blame_selected = function(git_branch_command, git_remote_get_url_command, git_
     "blame"
   )
   return {
-    cmd = "open",
+    cmd = "xdg-open",
     url = url,
   }
 end
